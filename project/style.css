@@ -1,0 +1,232 @@
+body{
+    font-family: sans-serif;
+    font-weight: 200px;
+    background-image: url(https://media.discordapp.net/attachments/1218912909686476861/1244030308723064883/blue-wallpaper-that-says-blue-it_335439-2189.png?ex=6653a102&is=66524f82&hm=cf1d3d69bb97b55df134677280f6f2180c573b1c802508251fa8a8b308960fc8&=&format=webp&quality=lossless&width=442&height=663);
+}
+
+
+#div{
+    border: 1px solid;
+    width: 400px;
+    height: 420px;
+    margin: auto;
+    background-color: rgb(131, 229, 241);
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+}
+#Fullname{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#Fullname:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#lastname{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#lastname:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#email{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#email:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#password{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#password:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#repassword{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#email:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+#button{
+    border: none;
+    width: 85%;
+    height: 35px;
+    background-color: rgb(27, 27, 234);
+    font-size: 20px;
+}
+#button:hover{
+    background-color: rgb(73, 73, 237);
+
+}
+
+#Username{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#Username:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+#div1{
+    border: 1px solid;
+    width: 400px;
+    height: 485px;
+    margin: auto;
+    background-color: rgb(131, 229, 241);
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+}
+
+
+#Fullname1{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#Fullname1:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#Username1{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#Username1:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#Email1{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#Email1:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#Address1{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#Address1:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#Phone1{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#Phone1:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#Password1{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#Password1:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#Repassword1{
+    border-radius: 25px;
+    width: 85%;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(216, 233, 248);
+    
+}
+#Repassword1:hover{
+    border: 4px solid rgb(241, 214, 200);
+}
+
+#Button1{
+    border: none;
+    width: 85%;
+    height: 35px;
+    background-color: rgb(27, 27, 234);
+    font-size: 20px;
+}
+#Button1:hover{
+    background-color: rgb(73, 73, 237);
+
+}
