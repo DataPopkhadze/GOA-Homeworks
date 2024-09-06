@@ -1,0 +1,1 @@
+#vercerti codewars ver gavakete

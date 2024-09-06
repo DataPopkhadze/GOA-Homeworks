@@ -16,7 +16,7 @@ body, html{
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    animation:load 1s linear infinite;
+    animation:load 0.0001s linear infinite;
 }
 
 @keyframes load{
