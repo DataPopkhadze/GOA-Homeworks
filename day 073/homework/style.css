@@ -1,0 +1,41 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    gap: 25px;
+    list-style-type: none;
+    list-style: none;
+    background-color: rgb(187, 153, 153);
+    width: 800px;
+    height: 50px;
+
+
+}
+
+button {
+    position: relative;
+    left: 1500px;
+    bottom: 50px;
+    background-color: rgb(128, 128, 128);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(102, 102, 102);
+}
