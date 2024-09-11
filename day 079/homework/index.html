@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <div id="passwordError" class="error"></div>
+    </form>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const passwordError = document.getElementById('passwordError');
+
+        passwordInput.addEventListener('input', function () {
+            const passwordValue = passwordInput.value;
+            
+            if (passwordValue.length < 8) {
+                passwordError.textContent = 'Password must be at least 8 characters long.';
+            } else {
+                passwordError.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
