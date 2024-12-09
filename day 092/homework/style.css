@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(210, 234, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 250px;
+}
+
+#inputPassword {
+    background-color: black;
+    width: 250px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+
+}
+
+#inputPassword:hover{
+    width: 220px;
+    height: 30px;
+    transition: 0.5s;
+}
+
+#message {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+

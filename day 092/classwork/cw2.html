@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .success {
+            color: green;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alphabet Input Validator</h1>
+    <input type="text" id="textInput" placeholder="Type letters only..." oninput="validateInput()" />
+    <div id="message" class="error"></div>
+
+    <script>
+        function validateInput() {
+            const input = document.getElementById('textInput').value;
+            const message = document.getElementById('message');
+            let isValid = true;
+
+            for (let i = 0; i < input.length; i++) {
+                const char = input[i];
+                if (!(char >= 'a' && char <= 'z') && !(char >= 'A' && char <= 'Z')) {
+                    isValid = false;
+                    break;
+                }
+            }
+
+            if (isValid) {
+                message.textContent = "Valid input";
+                message.className = "success";
+            } else {
+                message.textContent = "Error: Only letters are allowed!";
+                message.className = "error";
+            }
+        }
+    </script>
+</body>
+</html>
