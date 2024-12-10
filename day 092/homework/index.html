@@ -3,93 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password check</title>
+    <title>Password Check</title>
     <style>
-
-    #message {
-        margin-top: 10px;
-        font-size: 14px;
-    }
-
-    body {
-        background-color: rgb(210, 234, 255);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin-top: 250px;
-    }
-
-    #inputPassword {
-        background-color: black;
-        width: 250px;
-        text-align: center;
-        font-weight: bold;
-        color: white;
-
-    }
-
-    #inputPassword:hover{
-        width: 270px;
-        height: 30px;
-        transition: 0.5s;
-    }
-
-    #message {
-        text-align: center;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-    }
-
-
+        #message {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        body {
+            background-color: rgb(210, 234, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 250px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #inputPassword {
+            background-color: black;
+            width: 250px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+        }
+        #inputPassword:hover {
+            width: 270px;
+            height: 30px;
+            transition: 0.5s;
+        }
+        #message {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+        #h4 {
+            font-size: 0.8em;
+            font-size: bold;
+        }
     </style>
 </head>
 <body>
     <h1>Password Checker</h1>
-
+    <h4 id="h4">Enter a password that contains atleast 9 characters, 1 uppercase letter and a number for it to be hard to guess</h4>
     <div class="password-container">
-        <input type="password" id="inputPassword" placeholder="Enter your password" oninput="Password()">
+        <input type="password" id="inputPassword" placeholder="Enter your password" oninput="checkPassword()">
+        <input type="checkbox" onclick="toggleVisibility()" id="passwordCheck"> Show Password
     </div>
-
     <div id="message"></div>
 
     <script>
-        const inputPassword = document.getElementById("inputPassword");
-        const toggleVisibility = document.getElementById("toggleVisibility");
-        const message = document.getElementById("message");
-        function Password() {
-            const count = inputPassword.value.length;
-            const password = inputPassword.value;
-            let containsDigit = false;
-            let containsSpecialChar = false;
-
-            for (let i = 0; i < password.length; i++) {
-                if ('0123456789'.indexOf(password[i]) !== -1) {
-                    containsDigit = true;
-                }
-            }
-
-            const specialChars = "!@#%";
-            for (let i = 0; i < password.length; i++) {
-                if (specialChars.indexOf(password[i]) !== -1) {
-                    containsSpecialChar = true;
-                }
-            }
-
-            if (count < 6) {
-                message.textContent = "Your password is easy to guess";
-                document.body.style.backgroundColor = "red"
-
-            } else if (count >= 6 && count < 8) {
-                message.textContent = "Your password is medium to guess";
-                document.body.style.backgroundColor = "yellow"
-            } else if (count >= 8 && containsDigit && containsSpecialChar) {
-                message.textContent = "Your password is hard to guess";
-                document.body.style.backgroundColor = "green"
+        function toggleVisibility() {
+            const passwordField = document.getElementById("inputPassword");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
             }
         }
-        
-    </script>
 
+        function hasUpperCase(input) {
+            return /[A-Z]/.test(input);
+        }
+
+        function checkPassword() {
+            const password = document.getElementById("inputPassword").value;
+            const message = document.getElementById("message");
+            const length = password.length;
+
+            const hasDigit = /\d/.test(password);
+            const hasSpecialChar = /[!@#%]/.test(password);
+            const hasUpper = hasUpperCase(password);
+
+            if (length < 6) {
+                message.textContent = "Your password is easy to guess";
+                document.body.style.backgroundColor = "red";
+            } else if (length > 8 && hasUpper && !(hasDigit && hasSpecialChar)) {
+                message.textContent = "Your password is medium to guess";
+                document.body.style.backgroundColor = "yellow";
+            } else if (length >= 8 && hasDigit && hasSpecialChar && hasUpper) {
+                message.textContent = "Your password is hard to guess";
+                document.body.style.backgroundColor = "green";
+            } else {
+                message.textContent = "Your password is easy to guess";
+                document.body.style.backgroundColor = "red";
+            }
+        }
+    </script>
 </body>
 </html>
