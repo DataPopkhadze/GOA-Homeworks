@@ -5,28 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password check</title>
     <style>
-        .password-container {
-            position: relative;
-            width: 250px;
-            margin: 50px;
-        }
-
-        #inputPassword {
-            width: 100%;
-            padding: 8px;
-            padding-right: 30px;
-        }
-
-        .toggle-button {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-        }
 
     #message {
         margin-top: 10px;
@@ -52,7 +30,7 @@
     }
 
     #inputPassword:hover{
-        width: 220px;
+        width: 270px;
         height: 30px;
         transition: 0.5s;
     }
@@ -71,7 +49,6 @@
 
     <div class="password-container">
         <input type="password" id="inputPassword" placeholder="Enter your password" oninput="Password()">
-        <button id="toggleVisibility" class="toggle-button">👁️</button>
     </div>
 
     <div id="message"></div>
@@ -80,18 +57,6 @@
         const inputPassword = document.getElementById("inputPassword");
         const toggleVisibility = document.getElementById("toggleVisibility");
         const message = document.getElementById("message");
-
-        toggleVisibility.addEventListener("click", function() {
-            const currentType = inputPassword.type;
-            if (currentType === "password") {
-                inputPassword.type = "text";
-                toggleVisibility.textContent = "🙈";
-            } else {
-                inputPassword.type = "password";
-                toggleVisibility.textContent = "👁️";
-            }
-        });
-
         function Password() {
             const count = inputPassword.value.length;
             const password = inputPassword.value;
@@ -113,12 +78,17 @@
 
             if (count < 6) {
                 message.textContent = "Your password is easy to guess";
+                document.body.style.backgroundColor = "red"
+
             } else if (count >= 6 && count < 8) {
                 message.textContent = "Your password is medium to guess";
+                document.body.style.backgroundColor = "yellow"
             } else if (count >= 8 && containsDigit && containsSpecialChar) {
                 message.textContent = "Your password is hard to guess";
+                document.body.style.backgroundColor = "green"
             }
         }
+        
     </script>
 
 </body>
