@@ -61,17 +61,39 @@
         }
 
         function hasUpperCase(input) {
-            return /[A-Z]/.test(input);
+            for (let i = 0; i < input.length; i++) {
+                const char = input[i];
+                if (char >= 'A' && char <= 'Z') {
+                    return true; 
+                }
+            }
+            return false;
         }
+
 
         function checkPassword() {
             const password = document.getElementById("inputPassword").value;
             const message = document.getElementById("message");
             const length = password.length;
 
-            const hasDigit = /\d/.test(password);
-            const hasSpecialChar = /[!@#%]/.test(password);
-            const hasUpper = hasUpperCase(password);
+            let hasDigit = false;
+            let hasSpecialChar = false;
+            let hasUpper = false;
+
+            for (let i = 0; i < password.length; i++) {
+                const char = password[i];
+
+                if (char >= '0' && char <= '9') {
+                    hasDigit = true;
+                }
+                if (char === '!' || char === '@' || char === '#' || char === '%') {
+                    hasSpecialChar = true;
+                }
+
+                if (char >= 'A' && char <= 'Z') {
+                    hasUpper = true;
+                }
+            }
 
             if (length < 6) {
                 message.textContent = "Your password is easy to guess";

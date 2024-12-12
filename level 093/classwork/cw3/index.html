@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Program with Undo/Redo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .counter {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            background-color: rgb(119, 94, 211);
+        }
+        .disabled {
+            background-color: #f0f0f0;
+        }
+        button {
+            background-color: rgb(103, 103, 144);
+            color: white;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+        }
+        button:hover {
+            background-color: rgb(62, 62, 96);
+        }
+        button i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <button id="createCounter">Create Counter</button>
+    <div id="counters"></div>
+
+    <script>
+        let counterCount = 0;
+
+        document.getElementById('createCounter').addEventListener('click', function () {
+            if (counterCount >= 3) {
+                alert("You can only create up to 3 counters.");
+                return;
+            }
+
+            counterCount++;
+
+            const counterDiv = document.createElement('div');
+            counterDiv.className = 'counter';
+
+            const counterDisplay = document.createElement('p');
+            counterDisplay.textContent = 0;
+            counterDisplay.className = 'counterValue';
+
+            const incrementButton = document.createElement('button');
+            incrementButton.textContent = '+';
+            incrementButton.addEventListener('click', function () {
+                if (!lockCheckbox.checked) {
+                    redoState = null;
+                    backupState = parseInt(counterDisplay.textContent);
+                    counterDisplay.textContent = parseInt(counterDisplay.textContent) + 1;
+                }
+            });
+
+            const decrementButton = document.createElement('button');
+            decrementButton.textContent = '-';
+            decrementButton.addEventListener('click', function () {
+                if (!lockCheckbox.checked) {
+                    redoState = null;
+                    backupState = parseInt(counterDisplay.textContent);
+                    counterDisplay.textContent = parseInt(counterDisplay.textContent) - 1;
+                }
+            });
+
+            const undoButton = document.createElement('button');
+            undoButton.innerHTML = '<i class="fas fa-undo"></i>Undo';
+            let backupState = null;
+            let redoState = null;
+            undoButton.addEventListener('click', function () {
+                if (!lockCheckbox.checked && backupState !== null) {
+                    redoState = parseInt(counterDisplay.textContent);
+                    counterDisplay.textContent = backupState;
+                    backupState = null;
+                }
+            });
+
+            const redoButton = document.createElement('button');
+            redoButton.innerHTML = '<i class="fas fa-redo"></i>Redo';
+            redoButton.addEventListener('click', function () {
+                if (!lockCheckbox.checked && redoState !== null) {
+                    backupState = parseInt(counterDisplay.textContent);
+                    counterDisplay.textContent = redoState;
+                    redoState = null;
+                }
+            });
+
+            const lockCheckbox = document.createElement('input');
+            lockCheckbox.type = 'checkbox';
+            const lockLabel = document.createElement('label');
+            lockLabel.textContent = 'Lock';
+
+            lockCheckbox.addEventListener('change', function () {
+                if (lockCheckbox.checked) {
+                    counterDiv.classList.add('disabled');
+                    incrementButton.disabled = true;
+                    decrementButton.disabled = true;
+                    undoButton.disabled = true;
+                    redoButton.disabled = true;
+                } 
+                else {
+                    counterDiv.classList.remove('disabled');
+                    incrementButton.disabled = false;
+                    decrementButton.disabled = false;
+                    undoButton.disabled = false;
+                    redoButton.disabled = false;
+                }
+            });
+
+            counterDiv.appendChild(counterDisplay);
+            counterDiv.appendChild(incrementButton);
+            counterDiv.appendChild(decrementButton);
+            counterDiv.appendChild(undoButton);
+            counterDiv.appendChild(redoButton);
+            counterDiv.appendChild(lockCheckbox);
+            counterDiv.appendChild(lockLabel);
+
+            document.getElementById('counters').appendChild(counterDiv);
+        });
+    </script>
+</body>
+</html>

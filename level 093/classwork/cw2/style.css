@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(211, 129, 211);
+}
+
+input {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(149, 224, 224);
+}
+
+button:hover {
+    background-color: rgb(184, 100, 184);
+}
