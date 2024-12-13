@@ -59,18 +59,6 @@
                 passwordField.type = "password";
             }
         }
-
-        function hasUpperCase(input) {
-            for (let i = 0; i < input.length; i++) {
-                const char = input[i];
-                if (char >= 'A' && char <= 'Z') {
-                    return true; 
-                }
-            }
-            return false;
-        }
-
-
         function checkPassword() {
             const password = document.getElementById("inputPassword").value;
             const message = document.getElementById("message");
@@ -86,25 +74,28 @@
                 if (char >= '0' && char <= '9') {
                     hasDigit = true;
                 }
-                if (char === '!' || char === '@' || char === '#' || char === '%') {
+                if (char === '!' || char === '@' || char === '#' || char === '%' || char == "*" || char == "$") {
                     hasSpecialChar = true;
                 }
 
                 if (char >= 'A' && char <= 'Z') {
                     hasUpper = true;
-                }
+                }   
             }
 
             if (length < 6) {
                 message.textContent = "Your password is easy to guess";
                 document.body.style.backgroundColor = "red";
-            } else if (length > 8 && hasUpper && !(hasDigit && hasSpecialChar)) {
+            } 
+            else if (length > 8 && hasUpper && !(hasDigit && hasSpecialChar)) {
                 message.textContent = "Your password is medium to guess";
                 document.body.style.backgroundColor = "yellow";
-            } else if (length >= 8 && hasDigit && hasSpecialChar && hasUpper) {
+            } 
+            else if (length >= 8 && hasDigit && hasSpecialChar && hasUpper) {
                 message.textContent = "Your password is hard to guess";
                 document.body.style.backgroundColor = "green";
-            } else {
+            } 
+            else {
                 message.textContent = "Your password is easy to guess";
                 document.body.style.backgroundColor = "red";
             }

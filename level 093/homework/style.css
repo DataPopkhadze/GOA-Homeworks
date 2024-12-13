@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #373737;
+    border-radius: 10px;
+    background-color: #8cb4f9;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.scoreboard {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cookie {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.store {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.store h2 {
+    text-align: center;
+}
+
+.gadget {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #557bbd;
+}
+
+.gadget:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button {
+    background-color: blueviolet;
+}
+
+button:hover{
+    background-color: rgb(145, 73, 213);
+}

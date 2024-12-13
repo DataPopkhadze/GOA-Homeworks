@@ -1,7 +1,7 @@
 const myIncrease = document.getElementById('myIncrease');
 const myDecrease = document.getElementById('myDecrease');
 const myReset = document.getElementById('myReset');
-const myCount = document.getElementById('myLabel');
+const myCount = document.getElementById('myP');
 let count = 0;
 
 function updateColor() {
@@ -19,7 +19,7 @@ function updateColor() {
 myIncrease.onclick = function () {
     count++;
     myCount.textContent = count;
-    updateColor();
+    updateColor();          
 };
 
 myDecrease.onclick = function () {
