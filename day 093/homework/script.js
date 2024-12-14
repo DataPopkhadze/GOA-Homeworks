@@ -65,9 +65,13 @@ function updateButtons() {
 function getGadgetCost(button) {
     if (button === biggerFingerBtn) {
         return 50 * Math.pow(2, cookiePerClick - 1);
-    } else if (button === betterMinesBtn) {
+    } 
+    
+    else if (button === betterMinesBtn) {
         return 100 * Math.pow(2, goldPerClick - 1);
-    } else if (button === doubleCookiesBtn) {
+    } 
+    
+    else if (button === doubleCookiesBtn) {
         return 200 * Math.pow(2, Math.log2(cookiePerClick));
     }
 }

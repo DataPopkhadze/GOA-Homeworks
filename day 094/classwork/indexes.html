@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Hover Animation</title>
+  <style>
+    button.animated-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: gray;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+
+    button.animated-button:hover {
+        animation: hoverColors 2s infinite;
+    }
+
+    @keyframes hoverColors {
+    0% { background-color: orange; }
+    50% { background-color: purple; }
+    100% { background-color: rgb(255, 0, 0); }
+    }
+
+  </style>
+</head>
+<body>
+  <button class="animated-button">Hover me!</button>    
+</body>
+</html>
