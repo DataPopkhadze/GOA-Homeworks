@@ -18,7 +18,8 @@ btnsDiv.addEventListener('click', function(e) {
     if (btnId === compChoice) {
         winsP.style.color = 'purple';
         winsP.textContent = 'It\'s a tie!';
-    } else if (
+    } 
+    else if (
         (btnId === 'rock' && compChoice === 'paper') ||
         (btnId === 'scissors' && compChoice === 'rock') ||
         (btnId === 'paper' && compChoice === 'scissors')
@@ -27,7 +28,8 @@ btnsDiv.addEventListener('click', function(e) {
         compScoreP.textContent = "Computer's score is: " + compScore;
         winsP.style.color = 'red';
         winsP.textContent = 'You lost!';
-    } else {
+    } 
+    else {
         myScore++;
         myScoreP.textContent = "My score is:" + myScore;
         winsP.style.color = 'green';
