@@ -6,8 +6,39 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="randomId">click for random id</button>
-    <input type="text" id="input" placeholder="enter your id">
-    <script src="script.js"></script>
+    <h1>ID generator</h1>
+    <button id="randomId" onclick="handleGenerate()">click for random id</button>
+    <input type="text" id="id" placeholder="enter your id" name="s">
+    <button onclick="handleCheck()">Check your ID</button>
+    <script>
+        const id = document.getElementById('id');
+
+        let value = '';
+
+        id.onchange = (e) => {
+            value = e.target.value;
+            console.log(value);
+        }
+        id.value = value
+        let data = [];
+        function handleGenerate(){
+            let arr = []
+            for (let index = 2; index < 9; index++){
+                arr.push(Math.floor(Math.random() * 10));
+            }
+            data.push(arr.join(''));
+            localStorage.setItem("data", JSON.stringify(data));
+            console.log(data);
+        }
+        function handleCheck(){
+            const data = JSON.parse(localStorage.getItem("data"));
+            if (data.includes(value)){
+                alert('ID is found')
+            }
+            else {
+                alert('ID is chilling')
+            }
+        }
+    </script>
 </body>
 </html>
