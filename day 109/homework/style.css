@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(234, 234, 234);
+}
+
+.mainmainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.mainDiv {
+    background-color: white;
+    width: 700px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    background-color: red;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    bottom: 68.5%;
+    right: 53.7%;
+}
+
+.green {
+    background-color: green;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    bottom: 68.5%;
+    left: 53.7%;
+}
+
+.footer {
+    background-color: grey;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    position: absolute;
+}
+
+.purple {
+    background-color: purple;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    top: 70.7%;
+    left: 53.7%;
+}
+
+.blue {
+    background-color: blue;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    top: 70.7%;
+    right: 53.7%;
+}
